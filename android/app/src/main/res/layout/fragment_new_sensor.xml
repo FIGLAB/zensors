@@ -1,0 +1,256 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.figlab.zensors.NewSensorFragment">
+
+    <ViewFlipper
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/viewFlipper"
+        android:inAnimation="@anim/fadein"
+        android:autoStart="false">
+
+        <RelativeLayout
+            android:id="@+id/drawingLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            >
+            <com.figlab.zensors.DrawingView
+                android:id="@+id/drawingView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/button_draw_cancel"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:text="Cancel"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"/>
+
+            <Button
+                android:id="@+id/button_draw_clear"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:text="Clear"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"/>
+            <Button
+                android:id="@+id/button_draw_next"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:text="Next"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/zensor_purple"
+            >
+            <LinearLayout
+                android:id="@+id/questionType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/question_type_prompt"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="30dp"
+                    android:id="@+id/question_type_radio_group">
+                </RadioGroup>
+            </LinearLayout>
+            <Button
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:text="Back"
+                android:id="@+id/button_back_question_type"
+                android:onClick="viewFlipperPrevious"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"/>
+            <Button
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:text="Next"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/question_type_next"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/questionText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/zensor_purple">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:textColor="@android:color/black"
+                android:minHeight="100dp"
+                android:layout_margin="20dp"
+                android:padding="20dp"
+                android:imeActionLabel="Done"
+                android:inputType="text"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:id="@+id/questionEditText"
+                android:layout_centerInParent="true"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/speech_button"
+                android:layout_alignRight="@id/questionEditText"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_microphone"
+                android:padding="30dp"
+                />
+            <TextView
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question_text_prompt"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:layout_above="@id/questionEditText"
+                android:layout_centerHorizontal="true"/>
+            <Button
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:id="@+id/button_back_question_text"
+                android:text="Back"
+                android:onClick="viewFlipperPrevious"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"/>
+            <Button
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:id="@+id/button_next_question_text"
+                android:text="Next"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:enabled="false"/>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/questionFrequency"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/zensor_purple">
+
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                android:id="@+id/frequency_seek_bar_linear_layout"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:text=""/>
+                <SeekBar
+                    android:id="@+id/frequency_seek_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="4"
+                    android:layout_weight="5"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:text=""/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/frequency_text_labels"
+                android:layout_above="@id/frequency_seek_bar_linear_layout"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How frequently should\nthe sensor run?"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="50dp"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:layout_above="@id/frequency_text_labels"/>
+
+
+
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:id="@+id/frequency_cost_labels"
+                android:layout_below="@id/frequency_seek_bar_linear_layout"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/frequency_selected_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="50dp"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:layout_below="@id/frequency_cost_labels"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/frequency_selected_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:layout_below="@id/frequency_selected_label"
+                android:layout_centerHorizontal="true"/>
+
+            <Button
+                android:id="@+id/button_back_frequency"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:text="Back"
+                />
+            <Button
+                android:id="@+id/button_done_frequency"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="Done"
+                />
+
+        </RelativeLayout>
+    </ViewFlipper>
+
+</FrameLayout>

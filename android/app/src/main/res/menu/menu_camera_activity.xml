@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainCameraActivity">
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_add_sensor"
+        android:title="@string/action_add_sensor"
+        android:icon="@drawable/ic_add_sensor"
+        app:showAsAction="ifRoom"/>
+</menu>

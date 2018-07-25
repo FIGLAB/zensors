@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <SwitchPreference
+        android:key="pref_obfuscation"
+        android:title="@string/pref_obfuscation"
+        android:summary="@string/pref_obfuscation_summ"
+        android:defaultValue="false"/>
+
+    <ListPreference
+        android:key="pref_camera_picker"
+        android:title="@string/pref_camera_picker"
+        android:summary="@string/pref_camera_picker_summ"/>
+
+    <Preference
+        android:key="pref_delete_all"
+        android:title="@string/pref_delete_all"
+        android:summary="@string/pref_delete_all_summ"/>
+</PreferenceScreen>

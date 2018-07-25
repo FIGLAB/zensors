@@ -1,0 +1,23 @@
+=== Register Image Handler ===
+Endpoint: http://localhost:8081/
+HTTP POST or GET: /api/registerHandler
+Parameters: {
+	endpoint: use 'image_handler' for now
+	ip: 
+	port:
+}
+Returns: success true or false
+
+== Check if Device Exists ===
+Endpoint: api/deviceExists
+Paramters: {
+	device_id: 
+}
+Returns: True or False
+
+== Get Device Details, including list of Zensors ===
+Endpoint: api/getDevice
+Paramters: {
+	device_id: 
+}
+Returns: A List of Zensors in JSON format

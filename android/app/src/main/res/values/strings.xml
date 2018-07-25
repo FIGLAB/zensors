@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Zensors</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_splashscreen">Zensors</string>
+    <string name="title_activity_splash_screen">Zensors</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="question_type_prompt">What type of question\nare you asking?</string>
+    <string name="question_type_yes_no">Yes/No</string>
+    <string name="question_type_count">Count</string>
+    <string name="question_text_prompt">Please enter your question:</string>
+    <string name="action_add_sensor">Add Sensor</string>
+
+
+    <string name="pref_obfuscation">Enable Image Blur</string>
+    <string name="pref_obfuscation_summ">Blurs the image before it leaves the device</string>
+
+    <string name="pref_camera_picker">Select Camera</string>
+    <string name="pref_camera_picker_summ">Pick which camera to use</string>
+
+    <string name="pref_delete_all">Delete All Zensors</string>
+    <string name="pref_delete_all_summ">Remove all sensors</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

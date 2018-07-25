@@ -1,0 +1,13 @@
+<resources>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="sensor_mask">#33000000</color>
+
+    <color name="zensor_purple">#FF933D86</color>
+    <color name="zensor_purple_dark">#FF691760</color>
+    <color name="zensor_blue">#008FBF</color>
+    <color name="zensor_pink">#F060AA</color>
+    <color name="zensor_green">#649999</color>
+    <color name="zensor_dark_gray">#B0B0B0</color>
+    <color name="zensor_light_gray">#CCCCCC</color>
+</resources>

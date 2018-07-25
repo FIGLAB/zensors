@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/zensor_light_gray"
+    android:id="@+id/zensor_list_item"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="This is a test question?"
+        android:id="@+id/text_view_zensor_question"
+
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="@android:style/TextAppearance.Small"
+        android:text="FREE TEXT"
+        android:gravity="right"
+        android:visibility="gone"
+        android:id="@+id/text_view_zensor_type" />
+    </LinearLayout>
+
+    <com.androidplot.xy.XYPlot
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:id="@+id/xyplot_zensor_history"
+        androidplot.renderMode="use_background_thread"
+        android:background="#FFFFFFFF"
+        android:layout_weight="2"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+</LinearLayout>

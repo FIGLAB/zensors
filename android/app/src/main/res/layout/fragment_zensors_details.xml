@@ -1,0 +1,139 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.figlab.zensors.ZensorsDetailsFragment">
+
+    <RelativeLayout
+        android:id="@+id/zensor_details_relativeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/zensor_purple">
+        <TextView
+            android:id="@+id/details_question_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="What is the question?"
+            style="@style/Base.TextAppearance.AppCompat.Large"
+            />
+        <TextView
+            android:id="@+id/details_question_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/details_question_text"
+            android:paddingLeft="20dp"
+            android:text="TYPE"
+            style="@style/Base.TextAppearance.AppCompat.Medium"
+            />
+        <com.androidplot.xy.XYPlot
+            android:layout_width="fill_parent"
+            android:layout_height="130dp"
+            android:id="@+id/details_xyplot_zensor_history"
+            androidplot.renderMode="use_background_thread"
+            android:layout_below="@id/details_question_type"
+            android:background="#FFFFFFFF"/>
+
+
+        <TextView
+            android:id="@+id/details_frequency_selected_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Sensor Frequency:"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_below="@id/details_xyplot_zensor_history"/>
+        <TextView
+            android:id="@+id/details_frequency_selected_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="5 seconds"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_below="@id/details_xyplot_zensor_history"
+            android:layout_toRightOf="@id/details_frequency_selected_label_text"/>
+
+        <TextView
+            android:id="@+id/details_frequency_selected_cost_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Cost:"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_below="@id/details_frequency_selected_label_text"
+            android:layout_alignRight="@id/details_frequency_selected_label_text"/>
+        <TextView
+            android:id="@+id/details_frequency_selected_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="$10/day"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_below="@id/details_frequency_selected_label"
+            android:layout_toRightOf="@id/details_frequency_selected_cost_text"/>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:id="@+id/details_frequency_text_labels"
+            android:layout_below="@id/details_frequency_selected_cost">
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_below="@id/details_frequency_text_labels"
+            android:id="@+id/details_frequency_seek_bar_linear_layout">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:text=""/>
+            <SeekBar
+                android:id="@+id/details_frequency_seek_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:max="4"
+                android:layout_weight="5"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".5"
+                android:text=""/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:id="@+id/details_frequency_cost_labels"
+            android:layout_below="@id/details_frequency_seek_bar_linear_layout">
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/button_details_back"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:text="Back"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+
+        <Button
+            android:id="@+id/button_details_delete"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:text="Delete"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="viewFlipperNext"/>
+    </RelativeLayout>
+
+</FrameLayout>

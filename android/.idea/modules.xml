@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Zensors.iml" filepath="$PROJECT_DIR$/Zensors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-support-v4-preferencefragment-master/android-support-v4-preferencefragment-master.iml" filepath="$PROJECT_DIR$/android-support-v4-preferencefragment-master/android-support-v4-preferencefragment-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
+

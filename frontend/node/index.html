@@ -1,0 +1,28 @@
+<html>
+<head><title>Broadcast Test</title>
+<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('https://labs.gierad.com:8001');
+  
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+  
+  socket.on('text_update', function (data) {
+	  console.log('received text update');
+	  $(document).attr('title',data.text);
+  });
+  
+  // Send Update to Server
+  function sendMsg(msg) {
+  	socket.emit('text_update', {text: msg});
+  }
+  
+</script>
+</head>
+<body>
+</body>
+</html>
+
